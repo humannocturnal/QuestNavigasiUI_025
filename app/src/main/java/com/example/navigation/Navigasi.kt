@@ -4,7 +4,9 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.navigation.View.FormIsian
 import java.lang.reflect.Modifier
 import java.nio.file.WatchEvent
 
@@ -24,6 +26,13 @@ fun DataApp(
             startDestination = Navigasi.Formulirku.name,
             modifier = Modifier.padding(paddingValues = isiRuang)
         ) {
+            composable(route = Navigasi.Formulirku.name) {
+                FormIsian(
+                    OnSubmitBtnClick = {
+                        navController.navigate(route = Navigasi.Detail.name)
+                    }
+                )
+            }
 
         }
     }
