@@ -7,6 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.navigation.View.FormIsian
+import com.example.navigation.View.TampilData
 import java.lang.reflect.Modifier
 import java.nio.file.WatchEvent
 
@@ -33,7 +34,13 @@ fun DataApp(
                     }
                 )
             }
-
+            composable(route = Navigasi.Detail.name) {
+                TampilData(
+                    onBackBtnClick = {
+                        cancelAndBackToFormulir(navController)
+                    }
+                )
+            }
         }
     }
 }
